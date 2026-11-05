@@ -19,3 +19,28 @@ input 3: 7
 expected output: 42.0
 
 To stop running the program, press Ctrl+C.
+---
+
+# the test dependency
+for the quality gate to be passed, all 5 tests must pass; otherwise, fail.
+
+# the SCCM4910 environment activation command
+source /opt/python-venv/sccm-4910/bin/activate
+
+# ./check.sh
+this command runs the 5 tests. if it doesnt work use the command below and retry
+chmod +x check.sh
+
+
+# the expected five-test result
+add 5 and 2 should return 7
+divide 6 and 2 should return 3
+subtract 6 and 2 should return 4
+multiply 6 and 2 should return 12
+negative add -6 and -2 should return -8
+
+# how exit status is used.
+0 means all tests passed
+1 means some tests failed
+5 means no tests were collected
+other numerical codes point to a setup or tool error 
